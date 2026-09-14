@@ -1,4 +1,4 @@
-function errorHandling(erro) {
+export default function errorHandling(erro) {
     if(erro.code === 'ENOENT') {
         throw new Error('Arquivo não encontrado')
     } 
@@ -6,5 +6,3 @@ function errorHandling(erro) {
         return 'Erro na aplicação'
     } 
 }
-
-module.exports = errorHandling

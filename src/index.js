@@ -1,30 +1,14 @@
-const errorHandling = require('./errorHandling')
-
-const fs = require('fs')
-const caminho = process.argv
-const link = caminho[2]
-
-fs.readFile( link, 'utf-8', (erro, text) => {
-    try {
-        if (erro) throw erro
-        contador(text)
-    }
-    catch(erro) {
-        errorHandling(erro)
-    }
-});
-
-function contador(text) {
+export function contador(text) {
     const paragrafo = quebraParagrafo(text)
     const contagem = paragrafo.flatMap((paragrafo) => {
         if(!paragrafo) return []
         return verificarDuplicadas(paragrafo)
     })
-    console.log(contagem)
+    return contagem
 }
 
 function quebraParagrafo(text) {
-        return paragrafo = text
+        return text
         .toLowerCase()
         .split(/\r?\n/)
 
