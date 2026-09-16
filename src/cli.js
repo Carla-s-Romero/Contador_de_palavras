@@ -4,6 +4,7 @@ import { contador } from "./index.js";
 import { montaSaida } from "./helper.js";
 import { Command } from "commander";
 import path from "path";
+import chalk from "chalk";
 
 const program = new Command();
 
@@ -18,7 +19,7 @@ program
     const { texto, destino } = options;
 
     if (!texto || !destino) {
-      console.error("erro: por favor inserir o caminho de origem e destino");
+      console.error(chalk.red("erro: por favor inserir o caminho de origem e destino"));
       program.help();
       return;
     }
@@ -28,7 +29,7 @@ program
 
     try {
       processarArquivo(caminhoTexto, caminhoDestino);
-      console.log("texto processado com sucesso");
+      console.log(chalk.green("texto processado com sucesso"));
     } catch (error) {
       console.log("Ocorreu um erro no processamento", error);
     }
