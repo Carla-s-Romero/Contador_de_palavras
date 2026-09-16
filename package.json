@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Carla-s-Romero/3709-nodejs-lib/issues"
   },
-  "homepage": "https://github.com/Carla-s-Romero/3709-nodejs-lib#readme"
+  "homepage": "https://github.com/Carla-s-Romero/3709-nodejs-lib#readme",
+  "dependencies": {
+    "chalk": "^6.0.0",
+    "commander": "^15.0.0"
+  }
 }
